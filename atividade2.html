@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Comparação de Números</title>
+</head>
+<body>
+  <h2>Compare dois números:</h2>
+  <label for="num1">Número 1:</label>
+  <input type="number" id="num1" placeholder="Ex: 10">
+  <br><br>
+  <label for="num2">Número 2:</label>
+  <input type="number" id="num2" placeholder="Ex: 20">
+  <br><br>
+  <button onclick="compararNumeros()">Comparar</button>
+  <p id="resultado"></p>
+  
+  <script>
+    function compararNumeros() {
+      const n1 = Number(document.getElementById("num1").value);
+      const n2 = Number(document.getElementById("num2").value);
+      const resultado = document.getElementById("resultado");
+      
+      if (isNaN(n1) || isNaN(n2)) {
+        resultado.textContent = "Por favor, insira dois números válidos.";
+      } else if (n1 > n2) {
+        resultado.textContent = `0 primeiro número (${n1}) é maior que o segundo (${n2}).`
+      } else if (n1 < n2) {
+        resultado.textContent = `0 segundo número (${n2}) é maior que o primeiro (${n1}).`
+      } else {
+        resultado.textContent = "Os dois números são iguais.";
+      }
+    }
+  </script>
+</body>
+</html>
